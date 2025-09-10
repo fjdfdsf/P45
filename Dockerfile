@@ -1,14 +1,24 @@
-# syntax=docker/dockerfile:1
+# Use an official LTS Node image for better stability
+FROM node:20-slim
 
-FROM node:19-bullseye
+# Set environment variables
 ENV NODE_ENV=production
+ENV PORT=8080
 
+# Set working directory
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json*", "./"]
+# Copy dependency definitions first to leverage Docker caching
+COPY package*.json ./
 
-RUN npm install
+# Install only production dependencies
+RUN npm ci --omit=dev
 
+# Copy app source code
 COPY . .
 
-CMD [ "node", "index.js" ]
+# Expose the port your app runs on
+EXPOSE 8080
+
+# Start the app
+CMD ["node", "index.js"]
