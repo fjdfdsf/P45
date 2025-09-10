@@ -13,7 +13,7 @@
   "keywords": ["P45", "corrosion", "proxy", "railway"],
   "author": "ARKB",
   "dependencies": {
-    "corrosion": "^2.3.4",      // Or latest
+    "corrosion": "^2.3.4",      
     "express": "^4.18.2"
   },
   "devDependencies": {
