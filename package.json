@@ -1,7 +1,7 @@
 {
   "name": "PFortyFive",
   "version": "1.0.0",
-  "description": "P45",
+  "description": "P45 - Lightweight Corrosion Proxy",
   "type": "module",
   "engines": {
     "npm": ">=7.0.0",
@@ -10,11 +10,10 @@
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": ["P45"],
+  "keywords": ["P45", "corrosion", "proxy", "railway"],
   "author": "ARKB",
   "dependencies": {
-    "scripts": {   "start": "node index.js" }
-    "@tomphttp/bare-server-node": "^1.2.5",
+    "corrosion": "^2.3.4",      // Or latest
     "express": "^4.18.2"
   },
   "devDependencies": {
